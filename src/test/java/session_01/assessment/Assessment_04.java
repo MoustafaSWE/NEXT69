@@ -1,5 +1,7 @@
 package session_01.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_04 {
 
     /*
@@ -17,5 +19,28 @@ public class Assessment_04 {
      */
     public static void main(String[] args) {
 
+        Scanner smallNum = new Scanner(System.in);
+        int[] arr = {0,0,0};
+        int smallest;
+
+        System.out.println("Enter the first number..");
+        arr[0] = Integer.parseInt(smallNum.nextLine());
+
+        System.out.println("Enter the second number..");
+        arr[1] = Integer.parseInt(smallNum.nextLine());
+
+        System.out.println("Enter the third number..");
+        arr[2] = Integer.parseInt(smallNum.nextLine());
+
+        smallest = arr[0];
+
+        for (int i = 1; i < 3; i++) {
+
+            if (smallest > arr[i]) {
+
+                smallest = arr[i];
+            }
+        }
+        System.out.println("The smallest value is :" + smallest);
     }
 }
