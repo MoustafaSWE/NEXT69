@@ -1,5 +1,7 @@
 package session_01.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_02 {
 
     /*
@@ -16,6 +18,26 @@ public class Assessment_02 {
 
  */
     public static void main(String[] args) {
+        Scanner password=new Scanner(System.in);
+        try {
 
+        String password1=password.nextLine();
+        int attempt=3;
+        while (true){
+            System.out.println("Enter your password");
+            password1= password.nextLine();
+            if (password1.length()>=3){
+                System.out.println("Your password is valid");
+                break;
+
+            }
+
+            else {
+                System.out.println("Your password is invalid");
+            }
+        }
+    } catch (Exception e) {
+            System.out.println("Please correct password");
+        }
     }
 }
