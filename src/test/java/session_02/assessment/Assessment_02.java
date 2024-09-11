@@ -1,4 +1,6 @@
 package session_02.assessment;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Assessment_02 {
 
@@ -19,6 +21,55 @@ public class Assessment_02 {
 
  */
     public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            //  input two numbers
+            System.out.println("Enter the first number: ");
+            double num1 = scanner.nextDouble();
 
+            System.out.println("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+
+            // select  operation
+            System.out.println("Select an operation (+, -, *, /): ");
+            char operator = scanner.next().charAt(0);
+
+            // Perform the calculation
+            try {
+                double result ;
+                switch (operator) {
+                    case '+':
+                        result = num1 + num2;
+                        System.out.println("Result: " + num1 + " + " + num2 + " = " + result);
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        System.out.println("Result: " + num1 + " - " + num2 + " = " + result);
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        System.out.println("Result: " + num1 + " * " + num2 + " = " + result);
+                        break;
+                    case '/':
+                        // Handle division by zero
+                        if (num2 == 0) {
+                            System.out.println("Division by zero is not allowed!!");
+                        }else {
+                        result = num1 / num2;
+                        System.out.println("Result: " + num1 + " / " + num2 + " = " + result);
+                        }
+                        break;
+                    default:
+                        //  invalid operators
+                        System.out.println("Error: Invalid operator!. Please use +, -, *, or /.");
+                }
+            } catch (ArithmeticException e) {
+                // Handle division by zero
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        } catch (InputMismatchException e) {
+            // Handle invalid input for numbers
+            System.out.println("Error: Please enter valid numbers.");
+        }
     }
 }

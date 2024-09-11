@@ -1,5 +1,7 @@
 package session_01.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_01 {
 
     /*
@@ -15,6 +17,11 @@ public class Assessment_01 {
      */
 
     public static void main(String[] args) {
+        Scanner number = new Scanner(System.in);
+
+            System.out.println("Enter the first number: ");
+            int num1 = number.nextInt();
+
 
     }
 }

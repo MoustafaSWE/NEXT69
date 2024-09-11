@@ -1,4 +1,7 @@
 package session_02.assessment;
+import java.util.InputMismatchException;
+
+import java.util.Scanner;
 
 public class Assessment_01 {
 
@@ -20,6 +23,30 @@ public class Assessment_01 {
      */
 
     public static void main(String[] args) {
+            // Try-with-resources to automatically close the scanner
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter your age: ");
 
+            // Handle invalid integer input using InputMismatchException
+            try {
+                int userAge = scanner.nextInt();
+
+                // Handle age classification with proper cases
+                if (userAge < 0) {
+                    System.out.println("Invalid Age Input.");
+                } else if (userAge <= 12) {
+                    System.out.println("You are a Child.");
+                } else if (userAge <= 19) {
+                    System.out.println("You are a Teenager.");
+                } else if (userAge <= 64) {
+                    System.out.println("You are an Adult.");
+                } else {
+                    System.out.println("This is the last level: Hello Senior.");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input: Please enter a valid number for age.");
+            }
+        }
     }
 }
