@@ -25,22 +25,16 @@ import java.util.Scanner;
 
 
     public class Assessment_02 {
-
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-
             // Set initial password
             System.out.print("Set your password: ");
             String oldPassword = scanner.nextLine();
-
-            // Allow 3 attempts to enter the correct password
             int attempts = 3;
             boolean passwordMatch = false;
-
             while (attempts > 0) {
                 System.out.print("Enter your password: ");
                 String currentPassword = scanner.nextLine();
-
                 if (currentPassword.equals(oldPassword)) {
                     passwordMatch = true;
                     break;
@@ -49,7 +43,6 @@ import java.util.Scanner;
                     System.out.println("Incorrect password. You have " + attempts + " attempt(s) left.");
                 }
             }
-
             if (passwordMatch) {
                 System.out.println("Password matched successfully.");
             } else {
