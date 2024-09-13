@@ -76,6 +76,8 @@ public class Assessment_02 {
                                 System.out.println(sum);
                                 break;
                             }
+                        default:
+                            System.out.println("retype the operand pls");
                     }
                 //}
                /* else {
