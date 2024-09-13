@@ -1,4 +1,4 @@
-//package session_02.assessment;
+package session_02.assessment;//package session_02.assessment;
 
 //import java.util.Scanner;
 
