@@ -1,5 +1,7 @@
 package session_02.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_01 {
 
     /*
@@ -21,5 +23,47 @@ public class Assessment_01 {
 
     public static void main(String[] args) {
 
+        Scanner inUser = new Scanner(System.in);
+        int age;
+
+        while (true) {
+
+            try {
+
+                System.out.println("Enter your age....");
+                age = Integer.parseInt(inUser.nextLine());
+
+                if (age <= 0) {
+
+                    System.out.println("Use positive numbers dude...");
+
+                } else if ((age > 0) && (age <= 12)) {
+
+                    System.out.println("you are A cry baby");
+                    break;
+
+                } else if ((age > 12) && (age <= 19)) {
+
+                    System.out.println("you are teen");
+                    break;
+
+                } else if ((age > 19) && (age <= 64)) {
+
+                    System.out.println("you are adult");
+                    break;
+
+                } else if (age > 64) {
+
+                    System.out.println(" you are a fossil");
+                    break;
+
+                }
+            }
+            catch (Exception e) {
+
+                System.out.println("pls enter integer values");
+
+            }
+        }
     }
 }

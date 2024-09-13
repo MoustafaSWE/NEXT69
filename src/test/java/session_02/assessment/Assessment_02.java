@@ -1,5 +1,7 @@
 package session_02.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_02 {
 
     /*
@@ -20,5 +22,72 @@ public class Assessment_02 {
  */
     public static void main(String[] args) {
 
+        while (true) {
+
+            try {
+
+                Scanner inUser = new Scanner(System.in);
+                double firstNum;
+                double secondNum;
+                double sum;
+                String operand;
+
+                System.out.println("Enter the first num....");
+                firstNum = Double.parseDouble(inUser.nextLine());
+
+                System.out.println("Enter the math operand....");
+                operand = inUser.nextLine();
+
+                System.out.println("Enter the second num....");
+                secondNum = Double.parseDouble(inUser.nextLine());
+
+               /* if (("+" == operand) || ("-" == operand) || ("*" == operand) || ("/" == operand)) {*/
+
+                    switch (operand) {
+
+                        case "+":
+
+                            sum = firstNum + secondNum;
+                            System.out.println(sum);
+                            break;
+
+                        case "-":
+
+                            sum = firstNum - secondNum;
+                            System.out.println(sum);
+                            break;
+
+                        case "*":
+
+                            sum = firstNum * secondNum;
+                            System.out.println(sum);
+                            break;
+
+                        case "/":
+
+                            if (secondNum == 0) {
+
+                                System.out.println("u can not divide buy zero");
+                                break;
+
+                            } else {
+
+                                sum = firstNum / secondNum;
+                                System.out.println(sum);
+                                break;
+                            }
+                    }
+                //}
+               /* else {
+
+                    System.out.println("retype the operand pls");
+                }*/
+            }
+            catch(Exception e){
+
+                System.out.println("lock in and type again");
+        }
+    }
     }
 }
+
