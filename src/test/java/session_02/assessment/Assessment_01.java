@@ -1,5 +1,7 @@
 package session_02.assessment;
 
+import java.util.Scanner;
+
 public class Assessment_01 {
 
     /*
@@ -20,6 +22,28 @@ public class Assessment_01 {
      */
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter your age: ");
 
+        try {
+            int age = scanner.nextInt();
+
+            if (age < 0) {
+                System.out.println("Error: Age cannot be negative.");
+            } else if (age <= 12) {
+                System.out.println("You are classified as a Child.");
+            } else if (age <= 19) {
+                System.out.println("You are classified as a Teenager.");
+            } else if (age <= 64) {
+                System.out.println("You are classified as an Adult.");
+            } else {
+                System.out.println("You are classified as a Senior.");
+            }
+        } catch (Exception e) {
+
+            System.out.println("Error: Please enter a valid integer.");
+        } finally {
+            scanner.close();
+        }
     }
-}
+    }
