@@ -38,8 +38,8 @@ public class Assessment_02 {
                 System.out.println("Enter the math operand....");
                 operand = inUser.nextLine();
 
-                System.out.println("Enter the second num....");
-                secondNum = Double.parseDouble(inUser.nextLine());
+                /*System.out.println("Enter the second num....");
+                secondNum = Double.parseDouble(inUser.nextLine());*/
 
                /* if (("+" == operand) || ("-" == operand) || ("*" == operand) || ("/" == operand)) {*/
 
@@ -47,23 +47,32 @@ public class Assessment_02 {
 
                         case "+":
 
+                            System.out.println("Enter the second num....");
+                            secondNum = Double.parseDouble(inUser.nextLine());
                             sum = firstNum + secondNum;
                             System.out.println(sum);
                             break;
 
                         case "-":
 
+                            System.out.println("Enter the second num....");
+                            secondNum = Double.parseDouble(inUser.nextLine());
                             sum = firstNum - secondNum;
                             System.out.println(sum);
                             break;
 
                         case "*":
 
+                            System.out.println("Enter the second num....");
+                            secondNum = Double.parseDouble(inUser.nextLine());
                             sum = firstNum * secondNum;
                             System.out.println(sum);
                             break;
 
                         case "/":
+
+                            System.out.println("Enter the second num....");
+                            secondNum = Double.parseDouble(inUser.nextLine());
 
                             if (secondNum == 0) {
 
