@@ -1,28 +1,32 @@
 package session_03.firstAutomationScript;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
 
 public class FirstAutomationScript {
 
     public static void main(String[] args) throws InterruptedException {
-        // init chrome
+
+        // init. chrome driver
         WebDriver driver;
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
-        driver= new ChromeDriver(options);
-        //driver = new FirefoxDriver();
+        options.addArguments("--start-maximized");
+        options.addArguments("--incognito");  // Search value -> incognito
 
-        // open chrome and navigate to google
-        driver.navigate().to("https://www.google.com/");
-        //driver.get("https://www.google.com/");
-        driver.manage().window().maximize();
+        driver = new ChromeDriver(options);
 
-        Thread.sleep(2000);
+        // Open browser and navigate to google
+        driver.get("https://www.google.com.eg/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        Thread.sleep(20000);
+
         driver.quit();
+
     }
 
 
