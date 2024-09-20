@@ -22,5 +22,9 @@ public class T04_DragAndDrop {
 
         driver.navigate().to("https://the-internet.herokuapp.com/drag_and_drop");
 
+        Actions actions = new Actions(driver, Duration.ofSeconds(10));
+        WebElement element1 = driver.findElement(By.id("column-a"));
+        WebElement element2 = driver.findElement(By.id("column-b"));
+        actions.dragAndDrop(element1,element2).perform();
     }
 }
