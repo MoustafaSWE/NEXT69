@@ -1,27 +1,34 @@
 package session_06.testNGPackage;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class ClassB {
 
     @BeforeMethod
     public void beforeMethod (){
-        System.out.println("Before Method");
+        System.out.println("Open Browser");
     }
 
-    @Test
+    @Test(priority = 2) // Low
     public void test (){
-        System.out.println("TC1");
-    }
+        System.out.println("Enter User Name");
+        System.out.println("Enter User Password");
+        System.out.println("Click On Login");
+        Assert.assertTrue(false);
 
-    @Test
+    }
+    @Test(priority = 1, dependsOnMethods = "test" ) // high
     public void test1 (){
-        System.out.println("TC2");
+        System.out.println("Enter User Name");
+        System.out.println("Enter User Password");
+        System.out.println("Click On Login");
+        System.out.println("Logout From Browser");
     }
 
     @AfterMethod
     public void afterMethod (){
-        System.out.println("After Method");
+        System.out.println("Close Browser");
     }
 
 
