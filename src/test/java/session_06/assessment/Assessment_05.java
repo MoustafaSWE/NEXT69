@@ -5,7 +5,7 @@ package session_06.assessment;
         ● Navigate to https://www.ebay.com/
         ● Validate that you have landed on the main page.
         ● Search for "mazda mx-5".
-        ● Validate the results obtained.
+        ● Validate the results obtained. // adv
         ● Print/log the number of obtained search results.
         ● From the left hand side filter using "Transmission" -> "Manual"
  */

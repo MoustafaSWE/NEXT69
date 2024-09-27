@@ -1,4 +1,4 @@
-package session_06.assessment;
+package com.example.testCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +11,10 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class Assessment_01 {
+public class T01_LoginTestCase {
     WebDriver driver;
-    /*
+    SoftAssert softAssert = new SoftAssert();
+ /*
     Test Case:
         1. Open URL: https://www.saucedemo.com/v1/
         2. Enter Valid username: standard_user
@@ -36,16 +37,19 @@ public class Assessment_01 {
         driver.navigate().to("https://www.saucedemo.com/v1/");
     }
 
+    @AfterMethod
+    public void tearDown () {
+        driver.quit();
+    }
+
     @Test
     public void testCase01 (){
-        SoftAssert softAssert = new SoftAssert();
-
         //2. Enter Valid username: standard_user
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         //3. Enter invalid password: standard_user
         driver.findElement(By.id("password")).sendKeys("standard_user");
         //4. Click on Login button
-        driver.findElement(By.id("login-button")).click();
+        driver.findElement(By.id("login-button")).click();  // method -> Click
         //1. Assert that this error message is displayed: "Username and password do not match any user in this service"
         String actualText = driver.findElement(By.cssSelector("h3[data-test=\"error\"]")).getText();
         String expectedText = "Username and password do not match any user in this service";
@@ -61,10 +65,4 @@ public class Assessment_01 {
         softAssert.assertFalse(actualURl.equals(expectedURL),"user navigated to url: " + actualURl);
         softAssert.assertAll();
     }
-
-    @AfterMethod
-    public void tearDown (){
-        driver.quit();
-    }
-
 }

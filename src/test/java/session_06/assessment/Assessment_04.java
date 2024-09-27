@@ -1,6 +1,8 @@
 package session_06.assessment;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 /*
     Scenario 1 (Verify that user cannot log in with valid but not registered email)
@@ -29,5 +31,11 @@ import org.openqa.selenium.WebDriver;
         ● Make sure user can see the screen
  */
 public class Assessment_04 {
+
+    @Test
+    public void test01 () {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.amazon.eg/");
+    }
 
 }

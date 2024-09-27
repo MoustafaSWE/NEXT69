@@ -13,8 +13,5 @@ public class Assessment_02 {
         2. Assert that all product contains "$" beside its price
      */
 
-    public static void main(String[] args) {
-
-    }
 
 }

@@ -14,7 +14,4 @@ public class Assessment_03 {
         3. Assert that Cart displayed number 1, after adding one product to cart
      */
 
-    public static void main(String[] args) {
-
-    }
 }
