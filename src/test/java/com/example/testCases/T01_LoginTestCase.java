@@ -1,5 +1,6 @@
 package com.example.testCases;
 
+import com.example.pages.P01_LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,12 +45,14 @@ public class T01_LoginTestCase {
 
     @Test
     public void testCase01 (){
+        P01_LoginPage loginPage = new P01_LoginPage(driver);
+
         //2. Enter Valid username: standard_user
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         //3. Enter invalid password: standard_user
         driver.findElement(By.id("password")).sendKeys("standard_user");
         //4. Click on Login button
-        driver.findElement(By.id("login-button")).click();  // method -> Click
+        loginPage.clickOnLoginButton();
         //1. Assert that this error message is displayed: "Username and password do not match any user in this service"
         String actualText = driver.findElement(By.cssSelector("h3[data-test=\"error\"]")).getText();
         String expectedText = "Username and password do not match any user in this service";
